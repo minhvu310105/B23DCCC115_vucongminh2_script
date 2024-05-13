@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Item List</title>
+  </head>
+  <body>
+    <h1>Item List</h1>
+    <ul id="itemList">
+      <li>Iphone 11</li>
+      <li>Iphone 12</li>
+      <li>Iphone 13</li>
+    </ul>
+    <input type="text" id="newItem" placeholder="New Item" />
+    <button onclick="addItem()">Add</button>
+
+    <script>
+      function addItem() {
+        var newItem = document.getElementById("newItem").value.trim();
+        if (newItem !== "") {
+          var itemList = document.getElementById("itemList");
+          var newListItem = document.createElement("li");
+          newListItem.textContent = newItem;
+          itemList.appendChild(newListItem);
+          document.getElementById("newItem").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
